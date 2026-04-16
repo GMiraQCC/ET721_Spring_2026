@@ -28,8 +28,8 @@
 
         <p id="response"></p>
     </form>
-
-    <!-- LOADING ITEM -->
+<!---
+    RECOMMENT LATER: LOADING ITEM
     <section>
         <hr>
         <h2>ALL ITEMS</h2>
@@ -38,7 +38,7 @@
         <ul id="itemslist"></ul>
     </section>
 
-    <!-- TABLE TO UPDATE AN ITEM NAME AND PRICE -->
+    RECOMMENT LATER: TABLE TO UPDATE AN ITEM NAME AND PRICE
     <section id="updatesection" style="display: none;">
         <h3>Update item</h3>
         <input type="hidden" id="updateID">
@@ -52,7 +52,7 @@
 
         <button onclick="updateItem()">SAVE UPDATE</button>
     </section>
-
+-->
     <script>
         document.querySelector("#itemform").addEventListener("submit", async function(e){
             // prevent the form to clear the data after submission
@@ -65,7 +65,7 @@
             try{
                 // await = pause from here until the request finishes
                 // fetch() = sends an HTTP request to server
-                const res = await fetch("http://127.0.0.1:5000/items", {
+                const res = await fetch("https://crispy-garbanzo-r49rwgvjxjxq3xq57-5000.app.github.dev/items", {
                     method: "POST",
                     headers: {"Content-Type" : "application/json"},
                     body: JSON.stringify({name: name, price: Number(price)})
@@ -81,9 +81,10 @@
 
         })
 
-        // LOADING ITEMS
+        /* // LOADING ITEMS
         async function loaditems(){
-            const res = await fetch("http://127.0.0.1:5000/items")
+            // old bad code just in case: const res = await fetch("http://127.0.0.1:5000/items")
+            const res = await fetch("https://crispy-garbanzo-r49rwgvjxjxq3xq57-5000.app.github.dev/items")
             const data = await res.json()
 
             // collect the element to print all items
@@ -119,7 +120,8 @@
             const price = document.querySelector("#updatePrice").value = price
 
         // update the json data in the localhost
-        const res = await fetch(`http://127.0.0.1:5000/items/${id}`, {
+        // old bade code just in case: const res = await fetch(`http://127.0.0.1:5000/items/${id}`, {
+        const res = await fetch("https://crispy-garbanzo-r49rwgvjxjxq3xq57-5000.app.github.dev/items/${id}")
             method : "PUT",
             headers:{"Content type" : "application/json"},
             body: JSON.stringify({name:name, price: Number(price)})
@@ -130,13 +132,14 @@
 
         // function to remove an item
         async function deleteitem(id){
-            const res = await fetch(`http://127.0.0.1:5000/items/${id}`, {
+            // old bad code just in case: const res = await fetch(`http://127.0.0.1:5000/items/${id}`, {
+            const res = await fetch("https://crispy-garbanzo-r49rwgvjxjxq3xq57-5000.app.github.dev/items/${id}")
                 method : "DELETE",
         })
 
         const html = await res.text()
         document.body.innerHTML = html
-        }
+        } */
     </script>
 </body>
 </html>

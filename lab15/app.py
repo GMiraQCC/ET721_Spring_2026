@@ -27,7 +27,7 @@ def create_item():
     # add the data collected for the new item
     items[item_id] = data
 
-    # jsonify converts a Python dictionary into a json response, and ret
+    # jsonify converts a Python dictionary into a json response, and returns status code as 201 (your request worked & new resource was created)
     return jsonify({'id':item_id, 'item': data}), 201
 
 # READ ALL ITEMS
@@ -65,7 +65,6 @@ def handle_item(item_id):
     elif request.method == "DELETE":
         deleted_item = items.pop(item_id)
         return render_template('delete.html', item_id = item_id, item = data, deleted_item = deleted_item)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -51,7 +51,7 @@ def handle_item(item_id):
     # UPDATE
     elif request.method == "PUT":
         if not item:
-            return render_template('error.html', message = "NOT FOUND", item=item), 404
+            return render_template('error.html', message = "NOT FOUND", item = item), 404
         
         data = request.get_json()
         if not data:
@@ -63,7 +63,7 @@ def handle_item(item_id):
     # DELETE
     elif request.method == "DELETE":
         deleted_item = items.pop(item_id)
-        return render_template('delete.html', item_id = item_id, item = data, deleted_item = deleted_item)
+        return render_template('delete.html', item_id = item_id, deleted_item = deleted_item)
 
 if __name__ == '__main__':
     app.run(debug=True)

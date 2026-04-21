@@ -42,7 +42,6 @@ def handle_item(item_id):
 
     # READ
     if request.method == 'GET':
-        
         if not item:
             # 404 = serve is reachable but the item you asked for doesn't exist
             return jsonify({'Error':"Item not found"}), 404
@@ -52,7 +51,7 @@ def handle_item(item_id):
     # UPDATE
     elif request.method == "PUT":
         if not item:
-            return render_template('error.html', message = "NOT FOUND", item =item), 404
+            return render_template('error.html', message = "NOT FOUND", item=item), 404
         
         data = request.get_json()
         if not data:

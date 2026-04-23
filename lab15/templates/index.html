@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h2>Create Item by Gabriel Miravite</h2>
@@ -23,7 +24,7 @@
         </div>
 
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit">SUBMIT</button>
         </div>
 
         <p id="response"></p>
@@ -32,7 +33,7 @@
     <!-- LOADING ITEM -->
     <section>
         <hr>
-        <h2>ALL ITEMS</h2>
+        <h2>All Items</h2>
         <button onclick="loaditems()">LOAD ITEMS</button>
 
         <ul id="itemslist"></ul>
@@ -40,17 +41,20 @@
 
     <!-- TABLE TO UPDATE AN ITEM NAME AND PRICE -->
     <section id="updatesection" style="display: none;">
-        <h3>Update item</h3>
-        <input type="hidden" id="updateID">
-        <label>
-            Name: <input type="text" id="updateName">
-        </label>
+        <h3>Update Item</h3>
+        <div id="updateForm">
+            <input type="hidden" id="updateID">
+        
+            <label>
+                Name: <input type="text" id="updateName">
+            </label>
 
-        <label>
-            Price: <input type="text" id="updatePrice">
-        </label>
+            <label>
+                Price: <input type="text" id="updatePrice">
+            </label>
 
-        <button onclick="updateItem()">SAVE UPDATE</button>
+            <button onclick="updateItem()">SAVE UPDATE</button>
+        <div>
     </section>
 
     <script>
@@ -101,8 +105,8 @@
 
                 const li = document.createElement("li")
                 li.innerHTML = `ID = ${id} | Name = ${item.name} | Price = ${item.price}
-                <button onclick = "showupdateform('${id}', '${item.name}', '${item.price}')">Update</button>
-                <button onclick = "deleteitem('${id}')"> Delete </button>
+                <button onclick = "showupdateform('${id}', '${item.name}', '${item.price}')">UPDATE</button>
+                <button onclick = "deleteitem('${id}')">DELETE</button>
                 `
                 list.appendChild(li)
 

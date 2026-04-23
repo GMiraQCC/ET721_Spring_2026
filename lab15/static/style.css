@@ -1,0 +1,56 @@
+*{box-sizing: border-box;}
+body{
+    font-family: monospace, Helvetica, sans-serif;
+    margin: 5rem 12rem;
+    background-color: #ffdcdc;
+}
+h1{
+    font-size: 2.75rem;
+}
+h2{
+    text-align: center;
+    font-size: 2.75rem;
+}
+h3{
+    text-align: center;
+    font-size: 2.15rem;
+}
+form, div[id="updateForm"]{
+    background-color: #1f1f1f;
+    padding: 2rem;
+    font-size: 1.3rem;
+}
+label, #response{
+    color: white;
+}
+input[type="text"], input[type="number"]{
+    width: 100%;
+    padding: 1rem;
+    margin: 1.1rem 0rem;
+    font-size: 1.1rem;
+}
+button[type="submit"]{
+    background-color: #3828c4;
+    color: white;
+    width: 100%;
+    padding: 1.15rem;
+    margin: 1.3rem 0rem 0rem 0rem;
+    font-size: 1.15rem;
+    cursor: pointer;
+    &:hover{
+        background-color: #84adfa;
+    }
+}
+hr{
+    margin: 2rem 0rem;
+}
+button{
+    font-size: 1rem;
+}
+li{
+    font-size: 1.3rem;
+    padding: 0.3rem;
+}
+p:not(#response){
+    font-size: 1.3rem;
+}

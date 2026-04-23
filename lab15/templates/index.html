@@ -9,25 +9,19 @@
 <body>
     <h2>Create Item by Gabriel Miravite</h2>
     <form id="itemform">
-        <div>
-            <label>
-                Name:
-                <input type="text" id="name" required>
-            </label>
-        </div>
+        <label>
+            Name:
+            <input type="text" id="name" required>
+        </label>
 
-        <div>
-            <label>
-                Price:
-                <input type="number" id="price" required>
-            </label>
-        </div>
+        <label>
+            Price:
+            <input type="number" id="price" required>
+        </label>
 
-        <div>
-            <button type="submit">SUBMIT</button>
-        </div>
+        <button type="submit">SUBMIT</button>
 
-        <p id="response"></p>
+        <p id="response" style="display: none;"></p>
     </form>
 
     <!-- LOADING ITEM -->
@@ -80,6 +74,7 @@
 
                 // testing = print the response
                 const data = await res.json()
+                document.querySelector("#response").style.display = "block"
                 document.querySelector('#response').innerHTML = "Response: " + JSON.stringify(data)
 
             } catch(error){

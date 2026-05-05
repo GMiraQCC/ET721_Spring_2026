@@ -25,3 +25,24 @@ body{font-family: monospace, Helvetica, sans-serif;}
 #imageInput::file-selector-button{
     background-color: #3898db;
 }
+.btnupload{
+    background-color: darkblue;
+}
+#imageInput::file-selector-button:hover, .btnupload:hover{
+    background-color: crimson;
+}
+#message{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #464646;
+    font-style: italic;
+}
+.subtitle{color: darkblue;}
+.gallery{display: flex; flex-wrap: wrap;}
+.card{
+    margin: 10px;
+    text-align: center;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+}

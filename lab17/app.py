@@ -49,6 +49,35 @@ def index():
     return render_template('index.html' , images = images)
 
 # ---------------------------------------------------
+# UPLOAD IMAGE
+# ---------------------------------------------------
+@app.route('/upload', methods = ["POST"])
+def upload_image():
+    if 'image' not in request.files:
+        return jsonify({'error':'No file part'}), 400
+    
+    file = request.files['image']
+
+    if file.filename =="":
+        return jsonify({'error':'No selected file'}), 400
+
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO images (filename) VALUES (%s)", (filename,))
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        return jsonify({'message': 'Image uploaded successfully!'})
+    
+    return jsonify({'error':'Invalid file type'}), 400
+
+# ---------------------------------------------------
 # RUN APP
 # ---------------------------------------------------
 if __name__ == '__main__':

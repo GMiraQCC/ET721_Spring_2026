@@ -21,6 +21,13 @@ def login():
     return render_template("login.html")
 
 # ----------------------
+# SIGNUP ROUTING
+# ----------------------
+@app.route('/signup')
+def signup():
+    return render_template("signup.html")
+
+# ----------------------
 # RUN APP
 # ----------------------
 if __name__ == '__main__':

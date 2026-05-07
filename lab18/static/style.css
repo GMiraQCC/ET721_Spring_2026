@@ -12,14 +12,8 @@
     text-align: center;
 }
 /* login.html */
-.title{
-    text-align: center;
-    color: darkblue;
-
-}
-.form_section{
-    margin-bottom: 1rem;
-}
+.title{ text-align: center; color: darkblue; }
+.form_section{ margin-bottom: 1rem; }
 .form_section input{
     padding: 0.5rem;
     width: 100%;
@@ -33,18 +27,8 @@
     padding: 0.5rem 1rem;
     transition: ease 500ms;
 }
-.btn_login:hover, .btn_signup:hover{
-    background-color: crimson;
-    font-weight: bolder;
-}
-.signup_div{
-    margin-top: 3rem;
-    color: darkblue;
-}
-.signup_div a{
-    color: forestgreen;
-    font-size: 1.1rem;
-}
-.signup_div a:hover{
-    color: crimson;
-}
+.btn_login:hover, .btn_signup:hover{ background-color: crimson; font-weight: bolder; }
+.signup_div{ margin-top: 3rem; color: darkblue; }
+.signup_div a{ color: forestgreen; font-size: 1.1rem; }
+.signup_div a:hover{ color: crimson; }
+.flash_msg{ color: crimson; }

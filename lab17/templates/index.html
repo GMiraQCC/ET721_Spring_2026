@@ -13,15 +13,18 @@
         <button type="submit" class="btnupload">Upload</button>
     </form>
 
-    <p id="message">Testing</p>
+    <p id="message"></p>
 
     <h2 class="subtitle">Gallery</h2>
     <div class="gallery" id="gallery">
-        <div class="card">
-            <img src="{{url_for('static', filename = 'uploads/nypl.jpg')}}">
-        </div>
-    </div>
+        {% for image in images %}
+            <div class="card" id="image-{{image.id}}">
+                <img src="{{url_for('static', filename = 'uploads/'+image.filename)}}">
+                <button onclick="deleteImage({{image.id}})" class="btndelete">Delete</button>
+            </div>
+        {% endfor %}
 
+    </div>
 
     <script src="{{url_for('static', filename = 'imguploader_script.js')}}"></script>
 </body>
